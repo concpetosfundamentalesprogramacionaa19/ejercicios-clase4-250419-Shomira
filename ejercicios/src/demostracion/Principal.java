@@ -17,25 +17,35 @@ public class Principal {
    Scanner entrada = new Scanner(System.in);
    System.out.println("CALCULO DE COSTO DE ENVIO DE MENSAJES");
    System.out.println("Ingrese la cantidad de mensajes que ha enviado en el mes:");
-   int mensajes = entrada.nextInt();
-   double valor;
+   double mensajes = entrada.nextInt();
+   int base= 40;
+   int preciobase= 3;
+   double valorTotal=0;
+   double cantidad_M= mensajes;
     //Si son 40 mensajes por mes les cobra $3 dolare smensuales 
    if (mensajes <= 40){
-       valor = mensajes*3;     
+         valorTotal= 3;  
    }else{
     //Si es mayor a 40 mensjaes cobra 5ctvs adicional por cada mensaje del 40 al 200
        if(mensajes > 40 && mensajes <= 200){
-            valor = mensajes*3.05;
+           mensajes = mensajes-base;
+           valorTotal = mensajes*0.05;
+           valorTotal= preciobase + valorTotal;
     //se cobra 10 ctvs adicionales por cadamensaje si s epasa de los 200
        }else{
-           valor = mensajes*3.10;
+           if(mensajes >200 ){
+               mensajes = mensajes-base;
+               valorTotal = mensajes*0.10;
+               valorTotal= preciobase + valorTotal;
+           }
+           
        }
    }
    // calcular el iva 12%
-   double  iva = valor *0.12;
-   valor = valor + iva ;
-   System.out.printf("Usted ha enviado %d por tanto el costo de su tarifa"
-           + " es de %.2f$  ", mensajes, valor);
+   double  iva = valorTotal *0.12;
+   valorTotal = valorTotal + iva ;
+   System.out.printf("Usted ha enviado %.0f por tanto el costo de su tarifa"
+           + " es de %.2f$  ", cantidad_M, valorTotal);
     
       
   }
