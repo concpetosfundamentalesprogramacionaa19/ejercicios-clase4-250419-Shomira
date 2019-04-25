@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package paquetedos;
+package ejercicios;
 
 /**
  *
  * @author FJTAMATTSH
  */
-public class Operacion {
-    //Declaracion de variables estática
-    public static String mensaje = "Usted esta aprobado con: ";
-    public static String mensaje2 = "Usted esta reprobado con ";
+class calificacion_2 {
+    
 }
